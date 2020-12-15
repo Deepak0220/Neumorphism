@@ -1,0 +1,246 @@
+.section_top {
+    box-shadow: 0 19px 34px -15px darken($color: $custom-blue-grey, $amount: 5%);
+    margin-bottom: 16px;
+    header .navbar{
+        flex-wrap: nowrap;
+        // dropdown
+        .dropdown {
+            .dropdown-menu {
+                @extend %bg-custom-grey;
+                min-width: 250px;
+                top: 50px;
+                border: 0;
+                padding: 0;
+                // border: 1px solid $custom-blue-grey;
+                margin: 4px;
+                .dropdown-item {
+                    padding: 10px;
+                    border-top: 1px dashed $custom-blue-grey;
+                    &:focus,
+                    &:hover,
+                    &:active {
+                        color: $teal;
+                        background: none;             
+                    }
+                    &:first-child {
+                        border-top: 0px;
+                    }
+                    span[class*="icon"] {
+                        padding-right: 4px;
+                    }
+                }
+            }
+        }
+        // navlink
+        .nav-link {
+            font-size: 16px;
+            color: $indigo-dark;
+        }
+        // header_left
+        .header_left  {
+            @extend %bg-custom-grey;
+            position: absolute;
+            top: 100px;
+            z-index: 99;
+            width: 100%;
+            padding: 0 16px 16px;
+            left: 0;
+            box-shadow: 6px 6px 8px 0px $custom-blue-grey;
+            .nav-link {
+                margin: 0 8px;
+               @extend %custom-flex;
+                &:focus,
+                &:hover,
+                &:active,
+                &.active  {
+                    color: $teal;                
+                }
+                span[class*="icon"] {
+                    padding-right: 4px;
+                }
+            }
+            .dropdown {
+                &.show {
+                    box-shadow: inset 3px 3px 5px 0px $custom-blue-grey,inset -3px  -3px 5px 0px $white;
+                }
+                .dropdown-menu {
+                    .dropdown-item::before {
+                        @extend %font-family-icomoon;
+                        content: "\e96e";
+                        vertical-align: bottom;
+                        padding-right: 4px;
+                    }
+                }
+            } 
+        }
+        // header_right
+        .header_right {
+            .nav-link {
+                position: relative;
+                min-height: 35px;
+                margin-left: 14px;
+                padding: 0px 8px;
+                border-radius: 8px;
+                box-shadow: 6px 6px 8px 0px darken($color: $custom-blue-grey, $amount: 5%), -8px -8px 12px 0px $white;
+                @extend %bg-custom-grey;
+                @extend %custom-flex;
+                &:focus,
+                &:hover,
+                &:active {
+                    color: $teal;
+                    box-shadow: inset 3px 3px 6px 0px $custom-blue-grey,inset -3px  -3px 6px 0px $white;
+                }
+            }
+            .dropdown {
+                // messege_box
+                .dropdown-menu{
+                    position: absolute;
+                    left: inherit;
+                    box-shadow: 1px 0px 12px 0px darken($color: $custom-blue-grey, $amount: 5%);
+                    .dropdown_menu_header {
+                        padding: 8px;
+                        margin-bottom: 12px;
+                        .badge {
+                            background: none;
+                            color: $teal;
+                            padding: 4px 8px;
+                            border-radius: 4px;
+                            font-size: 14px;
+                            box-shadow: inset 2px 2px 3px 0px darken($color: $custom-blue-grey, $amount: 5%),inset -3px -3px 4px 0px $white;
+                        }
+                        .view_all_btn{
+                            background: darken($color: $warning, $amount: 5%);
+                            font-size: 14px;
+                            margin-right: 0;
+                            padding: 0 8px;
+                            white-space: nowrap;
+                            &:focus,
+                            &:hover,
+                            &:active {
+                                box-shadow: none;
+                                color: $black;
+                            }
+                        }
+                    }
+                    .dropdown_item_left {
+                        width: 36px;
+                        height: 36px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        border-radius: 50%;
+                        color: $white;
+                        span {
+                            padding-right: 0;
+                        }
+                    }
+                    .dropdown-item {
+                        &:hover {
+                            color: $gray;
+                            background: $custom-blue-grey;
+                        }
+                        .name,
+                        .msg_time {
+                            display: block;
+                        }
+                        .name {
+                            font-weight: 600;
+                            color: $indigo-dark;
+                        }
+                        .msg_time {
+                            color: $black;
+                            opacity: .7;
+                        }
+                    }
+                }
+                &.messege_box {
+                    .nav-link::before {
+                        @extend %font-family-icomoon;
+                        content: "\e918";
+                        color: $teal;
+                        position: absolute;
+                        top: 12px;
+                        right: -8px;
+                        font-size: 44px;
+                        line-height: 0;
+                    }
+                    .dropdown-menu {
+                        padding: 8px;
+                        width: 100%;
+                        right: -75px;
+                    }
+                }
+                &.profile .dropdown-menu {
+                    right: -30px;
+                }
+            }
+        }
+        
+    }
+	// breadcrumb
+	.breadcrumb {
+		@extend %bg-custom-grey;
+		// box-shadow: inset 3px 3px 6px 0px $custom-blue-grey,inset -3px  -3px 6px 0px $white;
+		.breadcrumb-item {
+			color: $teal;
+			&.active,
+			&:hover {
+				color: $gray;
+				text-decoration: none;
+			}
+		}
+		.breadcrumb-item + 
+		.breadcrumb-item::before {
+			@extend %font-family-icomoon;
+			content: "\e961";
+		}
+	}
+}
+
+// responsive 
+@media (min-width: 425px){
+    .section_top header .navbar  { 
+        .nav-link {
+            font-size: 20px;
+        }
+        // .header_left {
+        //     top: 100px;
+        // }
+        .header_right {
+            .nav-link {
+                min-height: 46px;
+                margin-left: 20px;
+                padding: 8px 14px;
+            }
+            .dropdown.messege_box .dropdown-menu {
+                width: 330px;
+            }
+        }
+    }
+}
+@media (min-width: 768px) {
+    .section_top header .navbar .header_right .dropdown.messege_box .dropdown-menu,
+    .section_top header .navbar .header_right .dropdown.profile .dropdown-menu {
+        right: 4px;
+    }
+}
+@media (min-width: 992px) {
+    .section_top header .navbar .header_left {
+        position: relative;
+        top: inherit;
+        box-shadow: none;
+        padding: 0;
+        .dropdown {
+            &.show {
+                box-shadow: none;
+            }
+            .dropdown-menu  {
+                box-shadow: 1px 0px 12px 0px darken($color: $custom-blue-grey, $amount: 5%);
+            }
+        }
+    }
+    // .section_top header .navbar .header_right .dropdown .dropdown-menu {
+    //     right: 0;
+    //     left: inherit;
+    // }
+}

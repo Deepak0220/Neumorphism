@@ -1,0 +1,94 @@
+
+%bg-custom-grey {
+	background: $custom-grey;
+}
+%custom-flex {
+	display: flex;
+	align-items: center;
+}
+%font-family-icomoon {
+	font-family: 'icomoon';
+}
+body {
+	font-family: 'Lato', sans-serif;
+	font-weight: 400;
+    height: 100vh;
+	position: relative;
+	@extend %bg-custom-grey;
+	color: $indigo-dark;
+	overflow-x: hidden;
+}
+//scrollbar
+::-webkit-scrollbar {
+	width: 10px;
+	height: 10px;
+}
+::-webkit-scrollbar-thumb {
+	background: $indigo-dark;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	margin-bottom: 0;
+	font-weight: bold;
+}
+//custom_horizontal_bar
+.custom_horizontal_bar {
+	height: 4px;
+	box-shadow: inset 1px 1px 2px 0px darken($color: $custom-blue-grey, $amount: 5%),inset -1px -1px 1px 0px $white;
+}	
+// employee_table
+.employee_table {
+	height: 350px;
+}
+// pagination
+.pagination {
+	// box-shadow: inset 3px 3px 6px 0px $custom-blue-grey,inset -3px  -3px 6px 0px $white;
+	.page-item .page-link {
+		@extend %bg-custom-grey;
+		color: $indigo-dark;
+		&:focus,
+		&:hover,
+		&:active,
+		&.active {
+			@extend %bg-custom-grey;
+			color: $teal;
+			box-shadow: inset 3px 3px 6px 0px $custom-blue-grey,inset -3px  -3px 6px 0px $white;
+			
+		}
+	}
+}
+
+//view_property
+.view_property {
+	.property_name {
+		font-weight: bold;
+		margin-bottom: 0;
+	}
+	.property_value {
+		word-break: break-all;
+		margin-bottom: 8px;
+		&::before {
+			content: ":";
+			padding-right: 4px;
+			display: none;
+		}
+	}
+}
+
+//chart
+.highcharts-axis-title,.highcharts-credits {
+	display: none;
+}
+
+@media (min-width: 768px) {
+	.view_property .property_value {
+		margin-bottom: 0;
+		&::before {
+			display: inline-block;
+		}
+	}
+}

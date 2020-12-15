@@ -1,0 +1,71 @@
+/* 
+    Project Name    : Neumorphism Dashboard
+    Author          : Deepak Pandey
+    Version         : 1.0
+*/
+
+/* BOOTSTRAP 4 : Default SCSS Files */
+    // Required
+    @import "../node_modules/bootstrap/scss/functions";
+    @import "../node_modules/bootstrap/scss/variables";
+    @import "../node_modules/bootstrap/scss/mixins";
+    
+
+/* BASE - base styles, variables, normalize, mixins etc... */ 
+@import "base/variables";
+// Option A: Include all of Bootstrap
+@import "../node_modules/bootstrap/scss/bootstrap";
+
+// Custom partial file neccessary icons
+@import "vendor/icons";
+
+// Custom partial file neccessary components
+@import "base/base";
+@import "components/cards";
+@import "components/forms";
+@import "components/buttons";
+ 
+
+body {
+    background: url("../imgs/bg_small_device.png");
+    font-family: 'Lato', sans-serif;
+}
+.main_card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    .login_card {
+        width: 100%;
+        box-shadow: 6px 6px 10px 0px rgba($color: $indigo-dark, $alpha: .5), -5px -5px 10px 0px rgba($color: $indigo-dark, $alpha: .5);
+    }
+    .sign_up_btn {
+        background: $indigo-dark; 
+        color: $white;
+        box-shadow:  6px 6px 8px 0px darken($color: $custom-blue-grey, $amount: 5%);
+        display: block;
+        width: 100%;
+        &:focus,
+        &:hover,
+        &:active,
+        &.active {
+            box-shadow: none;
+            background: $indigo-dark;
+            color: $white;
+        }
+    }    
+}
+// responsive
+@media (min-width:  576px) {
+    .main_card .login_card {
+        width: 480px;
+    }
+}
+@media (min-width: 1440px){
+    body {
+        background: url("../imgs/bg_large_device.png");
+    }
+    .main_card {
+        justify-content: flex-end;
+    }
+}

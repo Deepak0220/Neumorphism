@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/register.css">
+    <title>register page</title>
+</head>
+<body>
+    <div class="container main_body_content ">
+        <div class="row">
+            <div class="col-12 main_card">
+                <div class="card p-3 my-3 my-lg-0 register_card">
+                    <div class="card-body">
+                        <form action="login.html">
+                            <img src="imgs/logo.png" alt="the Gyan study" class="d-block mx-auto mb-5">
+                            <H5 >New Here?</H5>
+                            <p class="mb-4">Join us today! It only takes few steps</p>
+                            <div class="form-group">
+                                <input type="text" placeholder="Enter name" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <input type="email" placeholder="Enter email" class="form-control">
+                            </div>
+                            <div class="form-group d-md-flex">
+                                <label class="d-block mr-3">Select gender</label>
+                                <div class="radio">
+                                    <input type="radio" name="gender" id="male" class="d-none" checked />
+                                    <label for="male"><span>Male</span></label>
+                                </div>
+                                <div class="radio">
+                                    <input type="radio" name="gender" id="female" class="d-none" />
+                                    <label for="female"><span>Female</span></label>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="col-12 col-md-6">
+                                    <div class="form-group">
+                                        <input type="text" placeholder="State" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-6">
+                                    <div class="form-group">
+                                        <input type="text" placeholder="District" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="col-12 col-md-6">
+                                    <div class="form-group">
+                                        <input type="text" placeholder="Pincode" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-6">
+                                    <div class="form-group">
+                                        <input type="password" placeholder="Enter password" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group mt-4">
+                                <button type="submit" class="btn btn-default sign_up_btn">Resister</button>
+                            </div>
+                            <a href="login.html" title="Old User" class="text-gray">Already have a new account?
+                                <span class="text-teal">Login</span>
+                            </a>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- js -->
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/popper.min.js"></script>
+</body>
+</html>

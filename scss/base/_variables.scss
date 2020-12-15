@@ -1,0 +1,41 @@
+
+// custom colors
+$teal: #009688;
+$gray-blue-900: #263238;
+$gray-blue-500: #607D8B;
+$gray-blue-light: #e8edf5;
+$white: white;
+$grayf5: #f5f5f5;
+$gray: #51545a;
+$purple: #2e42ad;
+$deep-purple: #673AB7;
+$pink: #E91E63;
+$deep-orange: #FF5722;
+$custom-grey:#ecf0f3;
+$custom-blue-grey: #d9dfe9;
+$success: #4CAF50;
+$primary: #3F51B5;
+$left-menu-width: 260px;
+$cyan: #00BCD4;
+$sub_menu_shadow_color: #20265252;
+$light: lighten($primary, 48%);
+$indigo-dark:  #2e294e;
+
+// custom boostrap theme 
+$theme-colors: (
+  "primary": $primary,
+  "purple": $purple,
+  "gray": $gray,
+  "teal": $teal,
+  "deep-purple": $deep-purple,
+  "custom-grey": $custom-grey,
+  "deep-orange": $deep-orange,
+  "grayf5": $grayf5,
+  "success": $success,
+  "pink": $pink,
+  "cyan": $cyan,
+  "black": $black,
+  "light": $light,
+  "indigo-dark": $indigo-dark
+);
+

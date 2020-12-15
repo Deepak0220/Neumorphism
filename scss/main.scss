@@ -1,0 +1,33 @@
+/* 
+    Project Name    : Neumorphism Dashboard
+    Author          : Deepak Pandey
+    Version         : 1.0
+*/
+
+/* BOOTSTRAP 4 : Default SCSS Files */
+    // Required
+    @import "../node_modules/bootstrap/scss/functions";
+    @import "../node_modules/bootstrap/scss/variables";
+    @import "../node_modules/bootstrap/scss/mixins";
+    
+
+/* BASE - base styles, variables, normalize, mixins etc... */ 
+@import "base/variables";
+// Option A: Include all of Bootstrap
+@import "../node_modules/bootstrap/scss/bootstrap";
+
+// Custom partial file neccessary icons
+@import "vendor/icons";
+
+// Custom partial file neccessary components
+@import "base/base";
+@import "components/cards";
+@import "components/forms";
+@import "components/buttons";
+@import "components/tables";
+
+
+
+/* LAYOUTS - base styles, variables, normalize, mixins etc... */
+@import "layouts/header";
+@import "layouts/footer";

@@ -1,0 +1,100 @@
+.main_body_content {
+	// form element
+	.custom-file-label,
+	.custom-file-input,
+	.form-control,
+	.form-control:focus,
+	.form-control:active {
+		border-color: darken($color: $custom-grey, $amount: 6%);
+		@extend %bg-custom-grey;
+		color: $indigo-dark;
+		min-height: 44px;
+		// box-shadow: inset 3px 3px 6px 0px $white, -3px  -3px 6px 0px $custom-blue-grey;
+		box-shadow: inset 3px 2px 3px 0px darken($color: $custom-blue-grey, $amount: 5%),inset -2px -2px 4px 0px $white;
+	}
+	::placeholder {
+		color: $indigo-dark;
+	}
+	// select 
+	select.form-control {
+		appearance: none;
+		-webkit-appearance: none;
+		&::-ms-expand {
+			display: none;
+		}
+	}
+	//radio custom 
+	.radio,
+	.checkbox {
+		position: relative;
+		display: inline-block;
+		margin-right: 16px;
+		label {
+			cursor: pointer;
+			display: flex;
+			align-items: center;
+			&::before {
+				content: "";
+				position: absolute;       
+				width: 24px;
+				height: 24px;
+				border-radius: 32px;
+				box-shadow: 6px 6px 8px 0px darken($color: $custom-blue-grey, $amount: 5%), -8px -8px 12px 0px $white;
+				transition: box-shadow .6s ease-in-out .3s;
+			}
+			&::after {
+				@extend %font-family-icomoon;
+				content: "\e918";
+				font-size: 54px;
+				line-height: 0;
+				opacity: 0;
+				visibility: hidden;
+				position: absolute;
+				left: -15px;
+				bottom: 18px;
+				transition: opacity .6s ease-in-out;
+			}
+			span {
+				padding-left: 40px;
+			}
+		}
+	}
+	[type="radio"]:checked + label::before,
+	[type="checkbox"]:checked + label::before {
+		box-shadow: inset 3px 3px 3px 0px darken($color: $custom-blue-grey, $amount: 5%),inset -3px  -3px 3px 0px $white;
+	}
+	[type="radio"]:checked + label::after,
+	[type="checkbox"]:checked + label::after {
+		opacity: 1;
+		visibility: visible;
+		transform: scale(.8);
+	}
+	//checkbox 
+	.checkbox label {
+		&::before {
+			border-radius: 4px;
+		}
+		&::after {
+			content: "\e93c";
+			font-size: 24px;
+			left: inherit;
+		}
+	}
+	// range
+	.form-control-range {
+		-webkit-appearance: none;
+		height: 16px;
+		@extend %bg-custom-grey;
+		outline: none;
+		cursor: pointer;
+		box-shadow: inset  2px 2px 4px 0px $custom-blue-grey,inset -2px -2px 3px 0px $white;
+		&::-webkit-slider-thumb {
+			-webkit-appearance: none;
+			appearance: none;
+			width: 16px;
+			height: 16px;
+			background: $gray;
+			cursor: pointer;
+		}
+	}
+}
